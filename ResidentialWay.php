@@ -13,9 +13,10 @@ final class ResidentialWay extends HighWay
     protected int $maxSpeed = self::MAX_SPEED;
 
     // Méthode
-    function addVehicle(object $vehicle): array 
+    public function addVehicle(Vehicle $vehicle): string 
     {
-        $this->currentVehicles[] = array($vehicle);
-        return $this->currentVehicles;
+        $this->setCurrentVehicles($vehicle);
+        $sentence = 'Circulez, y a rien à voir';
+        return $sentence;
     } 
 }

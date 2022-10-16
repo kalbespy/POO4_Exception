@@ -1,23 +1,34 @@
 <?php
 
+
+require_once 'Vehicle.php';
+require_once 'Car.php';
+require_once 'Bicycle.php';
+require_once 'Truck.php';
+
 // HighWay.php
 
 abstract class HighWay
 {
     // Propriétés
-    protected array $currentVehicle = [];
+    protected array $currentVehicles;
     protected int $nbLane;
     protected int $maxSpeed;
 
-    // Get et Set currentVehicle
+
+    // Méthode Abstraite addVehicle
+    abstract public function addVehicle(Vehicle $vehicle);
+
+
+    // Get et Set currentVehicles
     public function getCurrentVehicle(): array
     {
-        return $this->currentVehicle;
+        return $this->currentVehicles;
     }
 
-    public function setCurrentVehicle(array $currentVehicle): void
+    public function setCurrentVehicle(array $currentVehicles): void
     {
-        $this->currentVehicle = $currentVehicle;
+        $this->currentVehicles[] = $currentVehicles;
     }
 
 
@@ -43,9 +54,4 @@ abstract class HighWay
     {
         $this->maxSpeed = $maxSpeed;
     }
-
-
-    // Méthode Abstraite addVehicle
-    abstract function addVehicle(object $vehicle);
-
 }
