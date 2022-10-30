@@ -15,8 +15,8 @@ final class ResidentialWay extends HighWay
     // Méthode
     public function addVehicle(Vehicle $vehicle): string 
     {
-        $this->setCurrentVehicles($vehicle);
-        $sentence = 'Circulez, y a rien à voir';
+        $this->setCurrentVehicle($vehicle);
+        $sentence = 'Ca passe. Circulez, y a rien à voir <br>';
         return $sentence;
     } 
 }

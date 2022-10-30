@@ -26,7 +26,7 @@ abstract class HighWay
         return $this->currentVehicles;
     }
 
-    public function setCurrentVehicle(array $currentVehicles): void
+    public function setCurrentVehicle(object $currentVehicles): void
     {
         $this->currentVehicles[] = $currentVehicles;
     }

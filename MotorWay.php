@@ -1,7 +1,6 @@
 <?php
 
 require_once 'HighWay.php';
-require_once 'HighWay.php';
 require_once 'Vehicle.php';
 require_once 'Car.php';
 require_once 'Bicycle.php';
@@ -20,13 +19,12 @@ final class MotorWay extends HighWay
     // Méthode
     public function addVehicle(Vehicle $vehicle): string
     {
-        if (!($vehicle instanceof Bike) || !($Vehicle instanceof Skateboard)) 
+        if (($vehicle instanceof Bicycle) || ($vehicle instanceof Skateboard)) 
         {
-            $this->setCurrentVehicles($vehicle);
-            $sentence = "Vehicle authorized";
-
+            $sentence = "Vehicle unauthorized! Freeze! <br>"; 
         } else {
-            $sentence = "Vehicle unauthorized! Freeze!"; 
+            $this->setCurrentVehicle($vehicle);
+            $sentence = "Vehicle authorized <br>";
         }
         return $sentence;
     }

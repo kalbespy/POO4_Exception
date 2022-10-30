@@ -22,11 +22,11 @@ final class PedestrianWay extends HighWay
     {
         if ($vehicle instanceof Bicycle || $vehicle instanceof Skateboard) 
         {
-            $this->setCurrentVehicles($vehicle);
-            $sentence = "Vehicle authorized";
+            $this->setCurrentVehicle($vehicle);
+            $sentence = "Vehicle authorized <br>";
 
         } else {
-            $sentence = "Vehicle unauthorized! Freeze!"; 
+            $sentence = "Vehicle unauthorized! Freeze! <br>"; 
         }
         return $sentence;      
     }
